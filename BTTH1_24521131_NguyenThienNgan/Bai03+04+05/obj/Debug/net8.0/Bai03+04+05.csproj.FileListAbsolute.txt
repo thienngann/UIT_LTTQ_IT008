@@ -1,0 +1,15 @@
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai03+04+05\bin\Debug\net8.0\Bai03+04+05.exe
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai03+04+05\bin\Debug\net8.0\Bai03+04+05.deps.json
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai03+04+05\bin\Debug\net8.0\Bai03+04+05.runtimeconfig.json
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai03+04+05\bin\Debug\net8.0\Bai03+04+05.dll
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai03+04+05\bin\Debug\net8.0\Bai03+04+05.pdb
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai03+04+05\obj\Debug\net8.0\Bai03+04+05.GeneratedMSBuildEditorConfig.editorconfig
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai03+04+05\obj\Debug\net8.0\Bai03+04+05.AssemblyInfoInputs.cache
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai03+04+05\obj\Debug\net8.0\Bai03+04+05.AssemblyInfo.cs
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai03+04+05\obj\Debug\net8.0\Bai03+04+05.csproj.CoreCompileInputs.cache
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai03+04+05\obj\Debug\net8.0\Bai03+04+05.sourcelink.json
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai03+04+05\obj\Debug\net8.0\Bai03+04+05.dll
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai03+04+05\obj\Debug\net8.0\refint\Bai03+04+05.dll
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai03+04+05\obj\Debug\net8.0\Bai03+04+05.pdb
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai03+04+05\obj\Debug\net8.0\Bai03+04+05.genruntimeconfig.cache
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai03+04+05\obj\Debug\net8.0\ref\Bai03+04+05.dll

@@ -2,12 +2,19 @@
 using System.Security.Cryptography;
 namespace Bai03_04_05
 {
-    class Date()
+    class Date
     {
         public int day { get; set; }
         public int month { get; set; }
         public int year { get; set; }
 
+        public Date()
+        {
+            day = 1;
+            month = 1;
+            year = 1;
+
+        }
         public Date(int d, int m, int y) : this()
         {
             day = d;

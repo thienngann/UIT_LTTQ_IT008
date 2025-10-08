@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\uit\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\Th\u1EF1c h\u00E0nh\\Code_Th\u1EF1c h\u00E0nh\\BTTH2_24521131_NguyenThienNgan\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E85555B8-4757-4ED6-AD2E-A3C47EDE0D34}|Bai02\\Bai02.csproj|d:\\uit\\l\u1EADp tr\u00ECnh tr\u1EF1c quan\\th\u1EF1c h\u00E0nh\\code_th\u1EF1c h\u00E0nh\\btth2_24521131_nguyenthienngan\\bai02\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E85555B8-4757-4ED6-AD2E-A3C47EDE0D34}|Bai02\\Bai02.csproj|solutionrelative:bai02\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B66206F-0BF5-4F74-8AB4-EF293E069965}|Bai01\\Bai01.csproj|d:\\uit\\l\u1EADp tr\u00ECnh tr\u1EF1c quan\\th\u1EF1c h\u00E0nh\\code_th\u1EF1c h\u00E0nh\\btth2_24521131_nguyenthienngan\\bai01\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B66206F-0BF5-4F74-8AB4-EF293E069965}|Bai01\\Bai01.csproj|solutionrelative:bai01\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E27A601-DEBE-4ECD-8D84-7EF76A3DED52}|Bai03\\Bai03.csproj|d:\\uit\\l\u1EADp tr\u00ECnh tr\u1EF1c quan\\th\u1EF1c h\u00E0nh\\code_th\u1EF1c h\u00E0nh\\btth2_24521131_nguyenthienngan\\bai03\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E27A601-DEBE-4ECD-8D84-7EF76A3DED52}|Bai03\\Bai03.csproj|solutionrelative:bai03\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\uit\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\Th\u1EF1c h\u00E0nh\\Code_Th\u1EF1c h\u00E0nh\\BTTH2_24521131_NguyenThienNgan\\Bai02\\Program.cs",
+              "RelativeDocumentMoniker": "Bai02\\Program.cs",
+              "ToolTip": "D:\\uit\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\Th\u1EF1c h\u00E0nh\\Code_Th\u1EF1c h\u00E0nh\\BTTH2_24521131_NguyenThienNgan\\Bai02\\Program.cs",
+              "RelativeToolTip": "Bai02\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T02:46:03.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\uit\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\Th\u1EF1c h\u00E0nh\\Code_Th\u1EF1c h\u00E0nh\\BTTH2_24521131_NguyenThienNgan\\Bai01\\Program.cs",
+              "RelativeDocumentMoniker": "Bai01\\Program.cs",
+              "ToolTip": "D:\\uit\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\Th\u1EF1c h\u00E0nh\\Code_Th\u1EF1c h\u00E0nh\\BTTH2_24521131_NguyenThienNgan\\Bai01\\Program.cs",
+              "RelativeToolTip": "Bai01\\Program.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAQwCkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T02:09:21.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\uit\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\Th\u1EF1c h\u00E0nh\\Code_Th\u1EF1c h\u00E0nh\\BTTH2_24521131_NguyenThienNgan\\Bai03\\Program.cs",
+              "RelativeDocumentMoniker": "Bai03\\Program.cs",
+              "ToolTip": "D:\\uit\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\Th\u1EF1c h\u00E0nh\\Code_Th\u1EF1c h\u00E0nh\\BTTH2_24521131_NguyenThienNgan\\Bai03\\Program.cs",
+              "RelativeToolTip": "Bai03\\Program.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAswDsAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T00:49:51.546Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

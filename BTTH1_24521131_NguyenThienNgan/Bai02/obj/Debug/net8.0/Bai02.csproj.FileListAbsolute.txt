@@ -1,0 +1,15 @@
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai02\bin\Debug\net8.0\Bai02.exe
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai02\bin\Debug\net8.0\Bai02.deps.json
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai02\bin\Debug\net8.0\Bai02.runtimeconfig.json
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai02\bin\Debug\net8.0\Bai02.dll
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai02\bin\Debug\net8.0\Bai02.pdb
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai02\obj\Debug\net8.0\Bai02.GeneratedMSBuildEditorConfig.editorconfig
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai02\obj\Debug\net8.0\Bai02.AssemblyInfoInputs.cache
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai02\obj\Debug\net8.0\Bai02.AssemblyInfo.cs
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai02\obj\Debug\net8.0\Bai02.csproj.CoreCompileInputs.cache
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai02\obj\Debug\net8.0\Bai02.sourcelink.json
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai02\obj\Debug\net8.0\Bai02.dll
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai02\obj\Debug\net8.0\refint\Bai02.dll
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai02\obj\Debug\net8.0\Bai02.pdb
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai02\obj\Debug\net8.0\Bai02.genruntimeconfig.cache
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH1_24521131_NguyenThienNgan\Bai02\obj\Debug\net8.0\ref\Bai02.dll
