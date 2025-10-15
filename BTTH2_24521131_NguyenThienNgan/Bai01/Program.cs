@@ -22,6 +22,7 @@
             int day = (int)datetime.DayOfWeek; // thu
 
             Console.WriteLine($"Lich thang {month} nam {year}");
+            Console.WriteLine("Sun  Mon  Tue  Wed  Thu  Fri  Sat");
             int date = 1;
             while (date<=MonthOfDate)
             {
@@ -29,13 +30,13 @@
                 {
                     if (date > MonthOfDate) break;
                     if (i < day)
-                        Console.Write("   ");
+                        Console.Write(new string(' ', 5));
                     else
                     {
                         if (date<10)
-                            Console.Write(" "+date +" ");
+                            Console.Write("  "+date +"  ");
                         else
-                            Console.Write(date+" ");
+                            Console.Write(" "+date+"  ");
                         date++;
                         day = -1;
                     }

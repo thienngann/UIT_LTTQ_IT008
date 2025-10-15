@@ -4,10 +4,13 @@
     {
         static void Main(string[] args)
         {
-            Console.Write("Nhap duong dan thu muc:");
+            // tieng viet
+            Console.InputEncoding = System.Text.Encoding.UTF8;
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+           
+
+            Console.Write("Nhap duong dan thu muc: ");
             string path = Console.ReadLine();
-            if (path == null)
-                return;
             if (Directory.Exists(path))
             {
                 string[]files = Directory.GetFiles(path);
@@ -15,10 +18,8 @@
                     Console.WriteLine("Khong ton tai tap tin");
                 else
                 {
-                    for (int i = 0; i < files.Length; i++)
-                    {
-                        Console.WriteLine($"{files[i]}");
-                    }
+                    foreach (var i in files)
+                        Console.WriteLine(i);
                 }
 
                 string [] dirs = Directory.GetDirectories(path);
@@ -28,14 +29,14 @@
                 }
                 else
                 {
-                    for (int i = 0;i<dirs.Length;i++)
-                    {
-                        string[] files_dirs = Directory.GetFiles (dirs[i]);
-                    }
+                    foreach (var i in dirs)
+                        Console.WriteLine(i);
+                   
                 }
             }
             else
             {
+                
                 Console.WriteLine("Khong tim thay thu muc");
             }
         }
