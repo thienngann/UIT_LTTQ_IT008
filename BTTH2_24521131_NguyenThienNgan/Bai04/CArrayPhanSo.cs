@@ -13,7 +13,7 @@ namespace Bai04
         public CArrayPhanSo()
         {
             sl = 0;
-            arrPs = new List<CPhanSo> { };
+            arrPs = new List<CPhanSo>();
         }
 
         public void Nhap()
