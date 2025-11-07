@@ -1,0 +1,10 @@
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTH3_NguyenThienNgan_24521131\bai07\bin\Debug\bai07.exe.config
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTH3_NguyenThienNgan_24521131\bai07\bin\Debug\bai07.exe
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTH3_NguyenThienNgan_24521131\bai07\bin\Debug\bai07.pdb
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTH3_NguyenThienNgan_24521131\bai07\obj\Debug\bai07.csproj.AssemblyReference.cache
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTH3_NguyenThienNgan_24521131\bai07\obj\Debug\bai07.Form1.resources
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTH3_NguyenThienNgan_24521131\bai07\obj\Debug\bai07.Properties.Resources.resources
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTH3_NguyenThienNgan_24521131\bai07\obj\Debug\bai07.csproj.GenerateResource.cache
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTH3_NguyenThienNgan_24521131\bai07\obj\Debug\bai07.csproj.CoreCompileInputs.cache
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTH3_NguyenThienNgan_24521131\bai07\obj\Debug\bai07.exe
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTH3_NguyenThienNgan_24521131\bai07\obj\Debug\bai07.pdb
