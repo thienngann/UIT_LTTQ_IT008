@@ -24,8 +24,6 @@ namespace Bai01
             this.Deactivate += DeactivatedForm;
             this.FormClosing += ClosingForm;
             this.FormClosed += ClosedForm;
-
-
         }
         private void LoadForm(object sender, EventArgs e)
         {
@@ -72,8 +70,6 @@ namespace Bai01
             string txt = $"Tips: Nhấn 'Open Modal' để xem Deactivated -> Activated";
             listView1.Items.Add(txt);
         }
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();

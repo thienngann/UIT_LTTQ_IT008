@@ -208,7 +208,6 @@ namespace Bai09
                     {
                         listBox1.Items.Clear();
                         listBox2.Items.Clear();
-
                     }
                 }
             }
