@@ -59,7 +59,7 @@
             this.địnhDạngToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1200, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1200, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -73,7 +73,7 @@
             this.lưuNộiDungVănBảnToolStripMenuItem,
             this.thoátToolStripMenuItem});
             this.hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
-            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(108, 29);
+            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(108, 30);
             this.hệThốngToolStripMenuItem.Text = "Hệ thống ";
             // 
             // tạoVănBảnMớiToolStripMenuItem
@@ -117,7 +117,7 @@
             // địnhDạngToolStripMenuItem
             // 
             this.địnhDạngToolStripMenuItem.Name = "địnhDạngToolStripMenuItem";
-            this.địnhDạngToolStripMenuItem.Size = new System.Drawing.Size(111, 29);
+            this.địnhDạngToolStripMenuItem.Size = new System.Drawing.Size(111, 30);
             this.địnhDạngToolStripMenuItem.Text = "Định dạng";
             this.địnhDạngToolStripMenuItem.Click += new System.EventHandler(this.địnhDạngToolStripMenuItem_Click);
             // 
@@ -132,9 +132,9 @@
             this.toolStripButtonBold,
             this.toolStripButtonItalic,
             this.toolStripButtonUnderline});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 33);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 36);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1200, 33);
+            this.toolStrip1.Size = new System.Drawing.Size(1200, 38);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -144,7 +144,7 @@
             this.toolStripButton1.Image = global::Bai04.Properties.Resources.Newfile;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(34, 28);
+            this.toolStripButton1.Size = new System.Drawing.Size(34, 33);
             this.toolStripButton1.Text = "New File";
             this.toolStripButton1.Click += new System.EventHandler(this.tạoVănBảnMớiToolStripMenuItem_Click);
             // 
@@ -154,18 +154,20 @@
             this.toolStripButton2.Image = global::Bai04.Properties.Resources.save__1_;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(34, 28);
+            this.toolStripButton2.Size = new System.Drawing.Size(34, 33);
             this.toolStripButton2.Text = "Save";
             this.toolStripButton2.Click += new System.EventHandler(this.lưuNộiDungVănBảnToolStripMenuItem_Click);
             // 
             // toolStripComboBoxFont
             // 
+            this.toolStripComboBoxFont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.toolStripComboBoxFont.Name = "toolStripComboBoxFont";
-            this.toolStripComboBoxFont.Size = new System.Drawing.Size(201, 33);
+            this.toolStripComboBoxFont.Size = new System.Drawing.Size(201, 38);
             this.toolStripComboBoxFont.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBoxFont_SelectedIndexChanged);
             // 
             // toolStripComboBoxSize
             // 
+            this.toolStripComboBoxSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.toolStripComboBoxSize.Items.AddRange(new object[] {
             "8",
             "9",
@@ -184,7 +186,7 @@
             "48",
             "72"});
             this.toolStripComboBoxSize.Name = "toolStripComboBoxSize";
-            this.toolStripComboBoxSize.Size = new System.Drawing.Size(121, 33);
+            this.toolStripComboBoxSize.Size = new System.Drawing.Size(121, 38);
             this.toolStripComboBoxSize.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBoxSize_SelectedIndexChanged);
             this.toolStripComboBoxSize.TextChanged += new System.EventHandler(this.toolStripComboBoxSize_TextChanged);
             // 
@@ -195,7 +197,7 @@
             this.toolStripButtonBold.Image = global::Bai04.Properties.Resources.bold_type;
             this.toolStripButtonBold.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonBold.Name = "toolStripButtonBold";
-            this.toolStripButtonBold.Size = new System.Drawing.Size(34, 28);
+            this.toolStripButtonBold.Size = new System.Drawing.Size(34, 33);
             this.toolStripButtonBold.Text = "Bold";
             this.toolStripButtonBold.Click += new System.EventHandler(this.toolStripButtonBold_Click);
             // 
@@ -205,7 +207,7 @@
             this.toolStripButtonItalic.Image = global::Bai04.Properties.Resources.italic_button;
             this.toolStripButtonItalic.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonItalic.Name = "toolStripButtonItalic";
-            this.toolStripButtonItalic.Size = new System.Drawing.Size(34, 28);
+            this.toolStripButtonItalic.Size = new System.Drawing.Size(34, 33);
             this.toolStripButtonItalic.Text = "Italic";
             this.toolStripButtonItalic.Click += new System.EventHandler(this.toolStripButtonItalic_Click);
             // 
@@ -215,20 +217,19 @@
             this.toolStripButtonUnderline.Image = global::Bai04.Properties.Resources.underline;
             this.toolStripButtonUnderline.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonUnderline.Name = "toolStripButtonUnderline";
-            this.toolStripButtonUnderline.Size = new System.Drawing.Size(34, 28);
+            this.toolStripButtonUnderline.Size = new System.Drawing.Size(34, 33);
             this.toolStripButtonUnderline.Text = "Underline";
             this.toolStripButtonUnderline.Click += new System.EventHandler(this.toolStripButtonUnderline_Click);
             // 
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 66);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 74);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1200, 784);
+            this.richTextBox1.Size = new System.Drawing.Size(1200, 776);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             this.richTextBox1.SelectionChanged += new System.EventHandler(this.SelectionChange);
-           // this.richTextBox1.SizeChanged += new System.EventHandler(this.SizeChanged);
             // 
             // Form1
             // 

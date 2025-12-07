@@ -28,7 +28,7 @@ namespace Bai03
         private void openToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Media Files | *.avi; *.mpeg; *.wav; *.midi; *.mp4; *.mp3";
+            openFileDialog.Filter = "Media Files | *.avi; *.mpeg; *.wav; *.mid; *.mp4; *.mp3";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 axWindowsMediaPlayer1.URL = openFileDialog.FileName;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bai06
@@ -39,14 +40,20 @@ namespace Bai06
             }    
         }
 
-        private void buttonSaoChep_Click(object sender, EventArgs e)
+        private async void buttonSaoChep_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBoxDes.Text) || string.IsNullOrEmpty(textBoxSource.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                 return;
             }
-            string destFile = Path.Combine(textBoxDes.Text, Path.GetFileName(textBoxSource.Text));
+            await Task.Run(() =>
+            {
+                CopyFile();
+            });
+            MessageBox.Show("Đã sao chép xong");
+
+          /*  string destFile = Path.Combine(textBoxDes.Text, Path.GetFileName(textBoxSource.Text));
             int percent = 0;
             using (FileStream source = new FileStream(textBoxSource.Text, FileMode.Open, FileAccess.Read))
             using (FileStream des = new FileStream (destFile, FileMode.Create, FileAccess.Write))
@@ -62,20 +69,57 @@ namespace Bai06
                 
                 while ((bytesRead = source.Read(buffer, 0, buffer.Length))>0)
                 {
+                  
+
                     des.Write(buffer, 0, bytesRead);
                     bytesCopied += bytesRead;
 
                     percent = (int) (bytesCopied *100 / totalBytes);
                     progressBar.Value = percent;
                     progressBar.Refresh();
-                    
-                    toolStripStatusLabel1.ToolTipText = $"Đang sao chép: {Path.GetFileName(textBoxSource.Text)}";
+
+                    Application.DoEvents();
+                    toolStripStatusLabel1.Text = $"Đang sao chép: {Path.GetFileName(textBoxSource.Text)}";
+                   
+
+
                 }                
             }
             toolStripStatusLabel1.Text = "Hoàn tất";
-            MessageBox.Show("Đã sao chép xong");
+            MessageBox.Show("Đã sao chép xong");*/
+        }
+        private void CopyFile()
+        {
+            string destFile = Path.Combine(textBoxDes.Text, Path.GetFileName(textBoxSource.Text));
+            using (FileStream source = new FileStream(textBoxSource.Text, FileMode.Open))
+            using (FileStream des = new FileStream(destFile, FileMode.Create))
+            {
+                byte[] buffer = new byte[4096];
+                long totalBytes = source.Length;
+                long bytesCopied = 0;
+                int bytesRead;
+
+                string sourcestr = Path.GetFileName(textBoxSource.Text);
+
+                while ((bytesRead = source.Read(buffer, 0, buffer.Length)) > 0)
+                {
+                    des.Write(buffer, 0, bytesRead);
+                    bytesCopied += bytesRead;
+
+                    int percent = (int)(bytesCopied * 100 / totalBytes);
+
+                    Invoke(new Action(() =>
+                    {
+                        progressBar.Value = percent;
+                        toolStripStatusLabel1.Text = $"Đang sao chép: {sourcestr}";
+
+                    }));
+                }
+            }
+
+            Invoke(new Action(() => toolStripStatusLabel1.Text = "Hoàn tất"));
         }
 
-        
+
     }
 }

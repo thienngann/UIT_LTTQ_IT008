@@ -9,88 +9,83 @@ namespace Bai04
     public partial class Form1 : Form
     {
         private string currentFilePath = null;
-        private FontFamily font = null;
-        private float size;
-        private FontStyle style = FontStyle.Regular;
+        private Font currentTypingFont = null;
+
         public Form1()
         {
             InitializeComponent();
-            foreach(var font in FontFamily.Families)
+            foreach (var font in FontFamily.Families)
                 toolStripComboBoxFont.Items.Add(font.Name);
 
             toolStripComboBoxFont.SelectedIndex = 353;
-            font = new FontFamily(toolStripComboBoxFont.SelectedItem.ToString());
-         
             toolStripComboBoxSize.SelectedIndex = 5;
-            size = float.Parse(toolStripComboBoxSize.SelectedItem as string);
+
+            currentTypingFont = new Font("Tahoma", 14, FontStyle.Regular);
+            richTextBox1.Font = currentTypingFont;
         }
 
         private void toolStripButtonBold_Click(object sender, EventArgs e)
         {
-            Font old = richTextBox1.SelectionFont;
-            FontStyle oldStyle = old.Style;
-            if (oldStyle.HasFlag(FontStyle.Bold))
-                toolStripButtonBold.BackColor = SystemColors.Control;
-            else
-                toolStripButtonBold.BackColor = SystemColors.ActiveBorder;
-            richTextBox1.SelectionFont = new Font (old, old.Style ^ FontStyle.Bold);
+            ToggleStyle(FontStyle.Bold);
+            UpdateStyleButtons();
         }
 
         private void toolStripButtonItalic_Click(object sender, EventArgs e)
         {
-            Font old = richTextBox1.SelectionFont;
-            FontStyle oldStyle = old.Style;
-            if (oldStyle.HasFlag(FontStyle.Italic))
-                toolStripButtonItalic.BackColor = SystemColors.Control;
-            else
-                toolStripButtonItalic.BackColor = SystemColors.ActiveBorder;
-            richTextBox1.SelectionFont = new Font(old, old.Style ^ FontStyle.Italic);
+            ToggleStyle(FontStyle.Italic);
+            UpdateStyleButtons();
         }
 
         private void toolStripButtonUnderline_Click(object sender, EventArgs e)
         {
-            Font old = richTextBox1.SelectionFont;
-            FontStyle oldStyle = old.Style;
-            if (oldStyle.HasFlag(FontStyle.Underline))
+            ToggleStyle(FontStyle.Underline);
+            UpdateStyleButtons();
+        }
+
+        private void ToggleStyle(FontStyle style)
+        {
+            Font selFont = richTextBox1.SelectionFont ?? currentTypingFont ?? richTextBox1.Font;
+
+            FontStyle newStyle = selFont.Style.HasFlag(style)
+                ? selFont.Style & ~style
+                : selFont.Style | style;
+
+            Font newFont = new Font(selFont.FontFamily, selFont.Size, newStyle);
+
+            richTextBox1.SelectionFont = newFont;
+            currentTypingFont = newFont;
+        }
+
+        private void UpdateStyleButtons()
+        {
+            var font = richTextBox1.SelectionFont;
+
+            if (font == null)
+            {
+                toolStripButtonBold.BackColor = SystemColors.Control;
+                toolStripButtonItalic.BackColor = SystemColors.Control;
                 toolStripButtonUnderline.BackColor = SystemColors.Control;
-            else
-                toolStripButtonUnderline.BackColor = SystemColors.ActiveBorder;
-            richTextBox1.SelectionFont = new Font(old, old.Style ^ FontStyle.Underline);
+                return;
+            }
+
+            toolStripButtonBold.BackColor = font.Bold ? SystemColors.ActiveBorder : SystemColors.Control;
+            toolStripButtonItalic.BackColor = font.Italic ? SystemColors.ActiveBorder : SystemColors.Control;
+            toolStripButtonUnderline.BackColor = font.Underline ? SystemColors.ActiveBorder : SystemColors.Control;
         }
 
         private void địnhDạngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (fontDialog1.ShowDialog() == DialogResult.OK)
+            FontDialog fd = new FontDialog();
+            if (fd.ShowDialog() == DialogResult.OK)
             {
-                if (fontDialog1.Font.Style.HasFlag(FontStyle.Bold))
-                    toolStripButtonBold.BackColor = SystemColors.ActiveBorder;
-                else
-                    toolStripButtonBold.BackColor = SystemColors.Control;
-                if (fontDialog1.Font.Style.HasFlag(FontStyle.Italic))
-                    toolStripButtonItalic.BackColor = SystemColors.ActiveBorder;
-                else
-                    toolStripButtonItalic.BackColor = SystemColors.Control;
-                toolStripButtonUnderline.BackColor= SystemColors.Control;
-                int index_f = Array.FindIndex(FontFamily.Families, f => f.Name.Equals(fontDialog1.Font.Name, StringComparison.OrdinalIgnoreCase));
-                toolStripComboBoxFont.SelectedIndex = index_f;
+                Font newFont = new Font(fd.Font.FontFamily, fd.Font.Size, fd.Font.Style);
+                currentTypingFont = newFont;
 
-                float selectedSize = fontDialog1.Font.Size;              
-              
-                for (int i = 0; i < toolStripComboBoxSize.Items.Count; i++)
-                {
-                    if (float.TryParse(toolStripComboBoxSize.Items[i].ToString(), out float size))
-                    {                       
-                        if (Math.Abs(size - selectedSize) < 0.9f) // So sánh gần đúng
-                        {
-                           toolStripComboBoxSize.SelectedIndex = i;
-                            break; // thoát vòng lặp khi tìm thấy
-                        }
-                    }                    
-                }
-                richTextBox1.SelectionFont = fontDialog1.Font;
+                if (richTextBox1.SelectionLength > 0)
+                    richTextBox1.SelectionFont = newFont;
             }
-
         }
+
         private void toolStripComboBoxFont_SelectedIndexChanged(object sender, EventArgs e)
         {
             ApplyFont();
@@ -101,31 +96,32 @@ namespace Bai04
             ApplyFont();
         }
 
-        void ApplyFont()
-        {
-            
-            if (toolStripComboBoxFont.SelectedItem == null || toolStripComboBoxSize.SelectedItem == null)
-                return;
-            if (toolStripComboBoxFont.Text == "" || toolStripComboBoxSize.Text == "") return;
-
-            //MessageBox.Show("hii");
-            FontFamily newFont = new FontFamily(toolStripComboBoxFont.SelectedItem.ToString());
-            float newSize = float.Parse(toolStripComboBoxSize.SelectedItem.ToString());
-
-            FontStyle currentStyle = richTextBox1.SelectionFont?.Style ?? FontStyle.Regular;
-
-            richTextBox1.SelectionFont = new Font(newFont, newSize, currentStyle);
-        }
-
         private void toolStripComboBoxSize_TextChanged(object sender, EventArgs e)
         {
-          
             if (float.TryParse(toolStripComboBoxSize.Text, out float temp) || toolStripComboBoxSize.Text == "")
-            {
                 ApplyFont();
-            }
             else
                 MessageBox.Show("Size chữ không hợp lệ!!!");
+        }
+
+        private void ApplyFont()
+        {
+            if (string.IsNullOrEmpty(toolStripComboBoxFont.Text)
+                || string.IsNullOrEmpty(toolStripComboBoxSize.Text))
+                return;
+
+            if (!float.TryParse(toolStripComboBoxSize.Text, out float size))
+                return;
+
+            FontStyle style = richTextBox1.SelectionFont?.Style
+                              ?? currentTypingFont?.Style
+                              ?? FontStyle.Regular;
+
+            Font newFont = new Font(toolStripComboBoxFont.Text, size, style);
+
+            currentTypingFont = newFont;
+
+            richTextBox1.SelectionFont = newFont;
         }
 
         private void tạoVănBảnMớiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -133,17 +129,20 @@ namespace Bai04
             richTextBox1.Clear();
             toolStripComboBoxFont.SelectedIndex = 353;
             toolStripComboBoxSize.SelectedIndex = 5;
+
             toolStripButtonBold.BackColor = SystemColors.Control;
             toolStripButtonItalic.BackColor = SystemColors.Control;
             toolStripButtonUnderline.BackColor = SystemColors.Control;
 
-            currentFilePath = null;            
-            font = new FontFamily(toolStripComboBoxFont.SelectedItem.ToString());                 
-            size = float.Parse(toolStripComboBoxSize.SelectedItem as string);            
-            style = FontStyle.Regular;
+            currentFilePath = null;
 
+            currentTypingFont = new Font(
+                toolStripComboBoxFont.SelectedItem.ToString(),
+                float.Parse(toolStripComboBoxSize.SelectedItem.ToString()),
+                FontStyle.Regular
+            );
 
-            richTextBox1.SelectionFont = new Font(font, size, style);
+            richTextBox1.SelectionFont = currentTypingFont;
         }
 
         private void mởTậpTinToolStripMenuItem_Click(object sender, EventArgs e)
@@ -152,6 +151,7 @@ namespace Bai04
             {
                 openFileDialog.Filter = "Text File | *.txt; *.rtf";
                 openFileDialog.Title = "Mở văn bản";
+
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string filepath = openFileDialog.FileName;
@@ -162,9 +162,7 @@ namespace Bai04
                         else
                         {
                             using (var sr = new StreamReader(filepath, Encoding.UTF8))
-                            {
                                 richTextBox1.Text = sr.ReadToEnd();
-                            }
                         }
                     }
                     catch (Exception ex)
@@ -172,7 +170,7 @@ namespace Bai04
                         MessageBox.Show("Lỗi khi mở file: " + ex.Message);
                     }
                 }
-            }                 
+            }
         }
 
         private void lưuNộiDungVănBảnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -191,69 +189,47 @@ namespace Bai04
                             richTextBox1.SaveFile(saveFileDialog.FileName, RichTextBoxStreamType.RichText);
                             currentFilePath = saveFileDialog.FileName;
                             MessageBox.Show("Lưu file thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show("Lỗi khi lưu file: " + ex.Message);
                         }
-                    }    
-                }                     
+                    }
+                }
             }
             else
             {
                 richTextBox1.SaveFile(currentFilePath, RichTextBoxStreamType.RichText);
                 MessageBox.Show("Lưu file thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }           
+            }
         }
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-        }       
+        }
 
         private void SelectionChange(object sender, EventArgs e)
-        {         
-
+        {
             Font selFont = richTextBox1.SelectionFont;
 
-            if (selFont != null)
+            if (selFont == null)
             {
-                style = selFont.Style;
-                size = selFont.Size;
-                font = selFont.FontFamily;               
-
-                toolStripComboBoxFont.Text = font.Name;
-                toolStripComboBoxSize.Text = size.ToString();
-            }
-            else
-            {               
+                toolStripComboBoxFont.SelectedIndex = -1;
                 toolStripComboBoxFont.Text = "";
-                 toolStripComboBoxSize.Text = "";
+                toolStripComboBoxSize.SelectedIndex = -1;
+                toolStripComboBoxSize.Text = "";
+                return;
             }
 
-            if (richTextBox1.SelectionFont.Style.HasFlag(FontStyle.Bold))
-            {
-                toolStripButtonBold.BackColor = SystemColors.ActiveBorder;
-            }    
-            else
-                toolStripButtonBold.BackColor = SystemColors.Control;
+            toolStripComboBoxFont.Text = selFont.FontFamily.Name;
+            toolStripComboBoxSize.Text = ((int)selFont.Size).ToString();
 
-            if (richTextBox1.SelectionFont.Style.HasFlag(FontStyle.Italic))
-            {              
-                toolStripButtonItalic.BackColor = SystemColors.ActiveBorder;
-            }
-            else
-                toolStripButtonItalic.BackColor = SystemColors.Control;
+            toolStripButtonBold.BackColor = selFont.Bold ? SystemColors.ActiveBorder : SystemColors.Control;
+            toolStripButtonItalic.BackColor = selFont.Italic ? SystemColors.ActiveBorder : SystemColors.Control;
+            toolStripButtonUnderline.BackColor = selFont.Underline ? SystemColors.ActiveBorder : SystemColors.Control;
 
-            if (richTextBox1.SelectionFont.Style.HasFlag(FontStyle.Underline))
-            {               
-                toolStripButtonUnderline.BackColor = SystemColors.ActiveBorder;
-            }
-            else
-                toolStripButtonUnderline.BackColor = SystemColors.Control;
-
-              
-        }       
+            currentTypingFont = selFont;
+        }
     }
 }
