@@ -1,0 +1,10 @@
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH5_24521131_NguyenThienNgan\Bai11\bin\Debug\Bai11.exe.config
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH5_24521131_NguyenThienNgan\Bai11\bin\Debug\Bai11.exe
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH5_24521131_NguyenThienNgan\Bai11\bin\Debug\Bai11.pdb
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH5_24521131_NguyenThienNgan\Bai11\obj\Debug\Bai11.csproj.AssemblyReference.cache
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH5_24521131_NguyenThienNgan\Bai11\obj\Debug\Bai11.Form1.resources
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH5_24521131_NguyenThienNgan\Bai11\obj\Debug\Bai11.Properties.Resources.resources
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH5_24521131_NguyenThienNgan\Bai11\obj\Debug\Bai11.csproj.GenerateResource.cache
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH5_24521131_NguyenThienNgan\Bai11\obj\Debug\Bai11.csproj.CoreCompileInputs.cache
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH5_24521131_NguyenThienNgan\Bai11\obj\Debug\Bai11.exe
+D:\uit\Lập trình trực quan\Thực hành\Code_Thực hành\BTTH5_24521131_NguyenThienNgan\Bai11\obj\Debug\Bai11.pdb

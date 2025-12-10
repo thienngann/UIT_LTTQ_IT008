@@ -1,4 +1,6 @@
-﻿namespace Bai09
+﻿using System.Windows.Forms;
+
+namespace Bai09
 {
     partial class Form1
     {
@@ -29,43 +31,46 @@
         private void InitializeComponent()
         {
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Circle",
             "Square",
             "Ellipse",
             "Pie",
-            "Filled Cirle",
+            "Filled Circle",
             "Filled Square",
             "Filled Ellipse",
-            "Fill Pie"});
+            "Filled Pie"});
             this.comboBox1.Location = new System.Drawing.Point(36, 37);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(238, 28);
             this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // panel1
+            // panel
             // 
-            this.panel1.Location = new System.Drawing.Point(246, 125);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(481, 248);
-            this.panel1.TabIndex = 1;
+            this.panel.Location = new System.Drawing.Point(322, 103);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(639, 401);
+            this.panel.TabIndex = 1;
+            this.panel.Paint += new PaintEventHandler(this.panel_Paint);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1000, 550);
+            this.Controls.Add(this.panel);
             this.Controls.Add(this.comboBox1);
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ComboBox Test";
             this.ResumeLayout(false);
 
         }
@@ -73,7 +78,7 @@
         #endregion
 
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel;
     }
 }
 
