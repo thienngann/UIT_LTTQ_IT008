@@ -105,7 +105,7 @@
             // 
             this.rbLinear.AutoSize = true;
             this.rbLinear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbLinear.Location = new System.Drawing.Point(54, 180);
+            this.rbLinear.Location = new System.Drawing.Point(54, 176);
             this.rbLinear.Name = "rbLinear";
             this.rbLinear.Size = new System.Drawing.Size(201, 26);
             this.rbLinear.TabIndex = 3;
@@ -117,7 +117,7 @@
             // 
             this.rbTexture.AutoSize = true;
             this.rbTexture.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbTexture.Location = new System.Drawing.Point(54, 133);
+            this.rbTexture.Location = new System.Drawing.Point(54, 128);
             this.rbTexture.Name = "rbTexture";
             this.rbTexture.Size = new System.Drawing.Size(144, 26);
             this.rbTexture.TabIndex = 2;
@@ -141,7 +141,7 @@
             // 
             this.rbSolid.AutoSize = true;
             this.rbSolid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbSolid.Location = new System.Drawing.Point(54, 38);
+            this.rbSolid.Location = new System.Drawing.Point(54, 35);
             this.rbSolid.Name = "rbSolid";
             this.rbSolid.Size = new System.Drawing.Size(122, 26);
             this.rbSolid.TabIndex = 0;

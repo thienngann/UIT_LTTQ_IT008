@@ -13,8 +13,7 @@ namespace Bai01
 {
     public partial class Form1 : Form
     {
-        /*private Font font;
-        private C*/
+      
         StringFormat strFormat = new StringFormat();
         public Form1()
         {

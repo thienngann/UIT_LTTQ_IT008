@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Windows.Forms;
 
 namespace Bai11
@@ -24,8 +25,7 @@ namespace Bai11
             panel2.MouseDown += Mouse_Down;
             panel2.MouseMove += Mouse_Move;
             panel2.MouseUp += Mouse_Up;
-            panel2.Paint += panel2_Paint;
-            
+            panel2.Paint += panel2_Paint;            
         }
 
         private void Mouse_Down(object sender, MouseEventArgs e)
@@ -35,7 +35,6 @@ namespace Bai11
             IsDrawing = true;
             StartPoint = e.Location;
         }
-
         private void Mouse_Move(object sender, MouseEventArgs e)
         {
             if (IsDrawing)
@@ -45,89 +44,81 @@ namespace Bai11
                                                 Math.Abs(StartPoint.X - EndPoint.X) + 40,Math.Abs(StartPoint.Y - EndPoint.Y)+40));
             }
         }
-
         private void Mouse_Up(object sender, MouseEventArgs e)
         {
             IsDrawing = false;
             EndPoint = e.Location;
-            ItemDrawing item = CreateItem();
-            if (item == null) return;
-            lines.Add(new MyLine { start = StartPoint, end = EndPoint, itemdrawing = item});
+            var shape = gbShape.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+            if (shape == "Line")
+                lines.Add(new MyLine { start = StartPoint, end = EndPoint, shape = shape, pen = new Pen (currentColor, int.Parse(textBox1.Text))});
+            else
+                lines.Add(new MyLine { start = StartPoint, end = EndPoint, shape = shape, brush = CreateBrush(StartPoint, EndPoint) });
             panel2.Invalidate();
         }
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            int w = 1;
             foreach (MyLine line in lines)
-            {
-                Brush brush = Brushes.Black;
-               
-                switch (line.itemdrawing.shape)
+            {                         
+                switch (line.shape)
                 {
                     case "Line":
-                        g.DrawLine(line.itemdrawing.pen, line.start, line.end);
+                        g.DrawLine(line.pen,line.start, line.end);
                         break;
                     case "Ellipse":
-                        g.FillEllipse(line.itemdrawing.brush, new Rectangle(Math.Min(line.start.X, line.end.X), Math.Min(line.start.Y, line.end.Y) ,
-                                                Math.Abs(line.start.X - line.end.X), Math.Abs(line.start.Y - line.end.Y)));
+                        g.FillEllipse(line.brush, CreateRectangle(line.start, line.end));
                         break;
-                    case "Rectangle":   
-                        g.FillRectangle(line.itemdrawing.brush, new Rectangle(Math.Min(line.start.X, line.end.X), Math.Min(line.start.Y, line.end.Y),
-                                              Math.Abs(line.start.X - line.end.X), Math.Abs(line.start.Y - line.end.Y)));
+                    case "Rectangle":
+                        g.FillRectangle(line.brush, CreateRectangle(line.start, line.end));
                         break;
                 }
             }
 
             if (IsDrawing)
-            {
-                int w = int.Parse(textBox1.Text);
+            {                
                 string shape = gbShape.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked)?.Text;
-                Brush brush;
-                if (rbSolid.Checked)
-                    brush = new SolidBrush(currentColor);
-                else if (rbHash.Checked)
-                    brush = new HatchBrush(HatchStyle.Cross, currentColor, Color.White);
-                else if (rbLinear.Checked)
-                    brush = new LinearGradientBrush(StartPoint, EndPoint, currentColor, Color.White);
-                else
-                    brush = new TextureBrush(img);
-                Rectangle rect = new Rectangle(Math.Min(StartPoint.X, EndPoint.X),
-                                                Math.Min(StartPoint.Y, EndPoint.Y),
-                                                Math.Abs(StartPoint.X - EndPoint.X),
-                                                Math.Abs(StartPoint.Y - EndPoint.Y));
+                Brush brush = CreateBrush(StartPoint, EndPoint);              
+                Rectangle rect = CreateRectangle(StartPoint, EndPoint);
                 if (shape == "Line")
+                { 
+                    w = int.Parse(textBox1.Text);
                     g.DrawLine(new Pen(currentColor, w), StartPoint, EndPoint);
+                }                   
                 else if (shape == "Ellipse")
                     g.FillEllipse(brush, rect);
                 else
                     g.FillRectangle(brush, rect);               
             }
         }
-        private ItemDrawing CreateItem()
+       
+        private Rectangle CreateRectangle (Point a, Point b)
         {
-            ColorDialog colorDialog = new ColorDialog();
-                      
-            var shape = gbShape.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+            int x = Math.Min(a.X, b.X);
+            int y = Math.Min(a.Y, b.Y);
+            int w = Math.Abs(a.X - b.X);
+            int h = Math.Abs(a.Y - b.Y);
+
+            if (w == 0) w = 1;
+            if (h == 0) h = 1;  
+
+            return new Rectangle(x, y, w, h);
+        }
+        private Brush CreateBrush (Point a, Point b)
+        {
+            Rectangle rect = CreateRectangle(a, b);
             Brush brush;
             if (rbSolid.Checked)
-                brush = new SolidBrush(currentColor);
+                brush = new SolidBrush(Color.Green);
             else if (rbHash.Checked)
-                brush = new HatchBrush(HatchStyle.Cross, currentColor, Color.White);
+                brush = new HatchBrush(HatchStyle.Horizontal, Color.Blue, Color.Green);
             else if (rbLinear.Checked)
-                brush = new LinearGradientBrush(StartPoint, EndPoint, currentColor, Color.White);
+                brush = new LinearGradientBrush(rect, Color.Red, Color.Green, LinearGradientMode.Vertical);
             else
                 brush = new TextureBrush(img);
-
-            Pen p = new Pen(currentColor, float.Parse(textBox1.Text));          
-            return new ItemDrawing
-            {
-                pen = p,
-                brush = brush,
-                shape = shape
-            };
+            return brush;
         }
-
         private void btnColor_Click(object sender, EventArgs e)
         {
             ColorDialog colorDialog = new ColorDialog();
@@ -142,18 +133,17 @@ namespace Bai11
                 return false;
             }
 
-            if (string.IsNullOrEmpty(textBox1.Text))
+            if (string.IsNullOrEmpty(textBox1.Text) && rbLine.Checked)
             {
                 MessageBox.Show("Vui lòng chọn width");
                 return false;
             }
 
-            if (!rbTexture.Checked && !rbSolid.Checked && !rbHash.Checked && !rbLinear.Checked)
+            if (!rbTexture.Checked && !rbSolid.Checked && !rbHash.Checked && !rbLinear.Checked && (rbEllipse.Checked || rbRectangle.Checked))
             {
                 MessageBox.Show("Vui lòng chọn brush");
                 return false;
             }
-
             return true;
         }
 
@@ -161,16 +151,9 @@ namespace Bai11
     class MyLine
     {
         public Point start;
-        public Point end;
-        public ItemDrawing itemdrawing;        
-    }
-
-    class ItemDrawing
-    {
-        public Pen pen;
+        public Point end;       
+        public string shape;
         public Brush brush;
-        public string shape;       
+        public Pen pen;
     }
-
-
 }

@@ -28,7 +28,6 @@ namespace Bai10
                string.IsNullOrEmpty(cbEndCap.Text) ||
                string.IsNullOrEmpty(cbWidth.Text))
                 {
-                    MessageBox.Show("Vui lòng chọn đầy đủ thông tin");
                     return null;
                 }
 
@@ -139,7 +138,11 @@ namespace Bai10
             isDrawing = false;
             endPoint = e.Location;
             Pen pen = CreatePen();
-            if (pen == null) return;
+            if (pen == null)
+            {
+                MessageBox.Show("Vui lòng chọn đầy đủ thông tin!");
+                return;
+            }
             lines.Add(new MyLine { Start = startPoint, End = endPoint, Pen = pen });
             panel2.Invalidate();
         }
